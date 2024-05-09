@@ -1,0 +1,64 @@
+{
+  "Function": {
+    "prefix": "edf",
+    "body": ["export default function ${TM_FILENAME_BASE}() {", "};"]
+  },
+  "Class": {
+    "prefix": "edc",
+    "body": [
+      "export default class ${TM_FILENAME_BASE} {",
+      "    constructor(data) {",
+      "    Object.assign(this, data);",
+      "    }",
+      "};"
+    ]
+  },
+
+  "React Function Component": {
+    "prefix": "rfc",
+    "body": [
+      "export default function ${TM_FILENAME_BASE}() {",
+      "    return (",
+      "           <div>${TM_FILENAME_BASE}</div>",
+      "    );",
+      "};"
+    ]
+  },
+  "React Class Component": {
+    "prefix": "rcc",
+    "body": [
+      "export default class ${TM_FILENAME_BASE} extends React.Component {",
+      "    constructor(props) {",
+      "        super(props);",
+      "    };",
+      "    render() {",
+      "        return (",
+      "               <div>${TM_FILENAME_BASE}</div>",
+      "        );",
+      "    };",
+      "};"
+    ]
+  },
+
+  "useState": {
+    "prefix": "useState",
+    "body": ["const [state, setState] = useState();"],
+    "description": "react-hook"
+  },
+  "useEffect": {
+    "prefix": "useEffect",
+    "body": ["useEffect(() => {", "}, []);"],
+    "description": "react-hook"
+  },
+
+  "dispatch": {
+    "prefix": "dispatch",
+    "body": ["dispatch = useDispatch();"],
+    "description": "redux-store"
+  },
+  "navigation": {
+    "prefix": "navigation",
+    "body": ["navigation = useNavigation();"],
+    "description": "react-router-dom"
+  }
+}

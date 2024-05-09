@@ -1,0 +1,32 @@
+{
+  "name": "js-snippets",
+  "displayName": "js-snippets",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.89.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "javascript",
+        "path": "./snippets/js-ts.code-snippets"
+      },
+      {
+        "language": "javascriptreact",
+        "path": "./snippets/js-ts.code-snippets"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/js-ts.code-snippets"
+      },
+      {
+        "language": "typescriptreact",
+        "path": "./snippets/js-ts.code-snippets"
+      }
+    ]
+  }
+}
