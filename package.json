@@ -28,5 +28,8 @@
         "path": "./snippets/js-ts.code-snippets"
       }
     ]
+  },
+  "devDependencies": {
+    "esbuild": "^0.21.1"
   }
 }

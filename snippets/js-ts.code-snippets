@@ -27,16 +27,18 @@
   "React Class Component": {
     "prefix": "rcc",
     "body": [
-      "export default class ${TM_FILENAME_BASE} extends React.Component {",
-      "    constructor(props) {",
-      "        super(props);",
-      "    };",
-      "    render() {",
-      "        return (",
-      "               <div>${TM_FILENAME_BASE}</div>",
-      "        );",
-      "    };",
-      "};"
+      "export default class ${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/} extends React.Component {",
+      "\tconstructor(props) {",
+      "\t\tsuper(props);",
+      "\t};",
+      "${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}",
+      "${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}",
+      "\trender() {",
+      "\t\treturn (",
+      "\t\t\t<div>${TM_FILENAME_BASE/[^a-z]+//gi}</div>",
+      "\t\t);",
+      "\t};",
+      "$2};"
     ]
   },
 
