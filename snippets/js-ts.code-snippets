@@ -34,13 +34,13 @@
   "React Class Component": {
     "prefix": "rcc",
     "body": [
-      "export default class ${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/} extends React.Component {",
+      "export default class ${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}$1 extends React.Component {",
       "\tconstructor(props) {",
       "\t\tsuper(props);",
       "\t};",
       "\trender() {",
       "\t\treturn (",
-      "\t\t\t<div>${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}</div>",
+      "\t\t\t<div>${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}$1</div>",
       "\t\t);",
       "\t};",
       "$2};"
@@ -48,13 +48,13 @@
   },
 
   "useState": {
-    "prefix": "useState",
-    "body": ["const [state, setState] = useState(null);"],
+    "prefix": "const [",
+    "body": ["const [state, setState] = useState($1);"],
     "description": "react-hook"
   },
   "useEffect": {
     "prefix": "useEffect",
-    "body": ["useEffect(() => {", "}, []);"],
+    "body": ["useEffect(() => {", "\t$1", "}, []);"],
     "description": "react-hook"
   },
 
@@ -64,14 +64,14 @@
     "description": "redux-hook"
   },
   "dispatch": {
-    "prefix": "dispatch",
-    "body": ["dispatch = useDispatch();"],
+    "prefix": "const dispatch",
+    "body": ["const dispatch = useDispatch();"],
     "description": "redux-hook"
   },
 
   "navigation": {
-    "prefix": "navigation",
-    "body": ["navigation = useNavigation();"],
+    "prefix": "const navigation",
+    "body": ["const navigation = useNavigation();"],
     "description": "react-router-dom"
   }
 }
