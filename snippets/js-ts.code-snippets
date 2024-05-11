@@ -1,25 +1,32 @@
 {
   "Function": {
     "prefix": "edf",
-    "body": ["export default function ${TM_FILENAME_BASE}() {", "};"]
+    "body": [
+      "export default function ${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}$1() {",
+      "};"
+    ]
   },
   "Class": {
     "prefix": "edc",
     "body": [
-      "export default class ${TM_FILENAME_BASE} {",
+      "export default class ${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}$1 {",
       "    constructor(data) {",
       "    Object.assign(this, data);",
       "    }",
       "};"
     ]
   },
+  "Console Log": {
+    "prefix": "clg",
+    "body": ["console.log($1);"]
+  },
 
   "React Function Component": {
     "prefix": "rfc",
     "body": [
-      "export default function ${TM_FILENAME_BASE}() {",
+      "export default function ${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}$1() {",
       "    return (",
-      "           <div>${TM_FILENAME_BASE}</div>",
+      "           <div>${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}$1</div>",
       "    );",
       "};"
     ]
@@ -31,11 +38,9 @@
       "\tconstructor(props) {",
       "\t\tsuper(props);",
       "\t};",
-      "${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}",
-      "${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}",
       "\trender() {",
       "\t\treturn (",
-      "\t\t\t<div>${TM_FILENAME_BASE/[^a-z]+//gi}</div>",
+      "\t\t\t<div>${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}</div>",
       "\t\t);",
       "\t};",
       "$2};"
@@ -44,7 +49,7 @@
 
   "useState": {
     "prefix": "useState",
-    "body": ["const [state, setState] = useState();"],
+    "body": ["const [state, setState] = useState(null);"],
     "description": "react-hook"
   },
   "useEffect": {
@@ -53,11 +58,17 @@
     "description": "react-hook"
   },
 
+  "useSelector": {
+    "prefix": "useSelector",
+    "body": ["useSelector((state) => state$1);"],
+    "description": "redux-hook"
+  },
   "dispatch": {
     "prefix": "dispatch",
     "body": ["dispatch = useDispatch();"],
-    "description": "redux-store"
+    "description": "redux-hook"
   },
+
   "navigation": {
     "prefix": "navigation",
     "body": ["navigation = useNavigation();"],
