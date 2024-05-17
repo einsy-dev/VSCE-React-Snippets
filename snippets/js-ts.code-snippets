@@ -25,6 +25,14 @@
     "prefix": "af",
     "body": ["() => {", "};"]
   },
+  "Function arrow export": {
+    "prefix": "eaf",
+    "body": ["export () => {", "};"]
+  },
+  "Function arrow default export": {
+    "prefix": "edaf",
+    "body": ["export default () => {", "};"]
+  },
   "Class": {
     "prefix": "edc",
     "body": [
