@@ -1,10 +1,29 @@
 {
-  "Function": {
+  "export Function": {
     "prefix": "edf",
     "body": [
       "export default function ${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}$1() {",
       "};"
     ]
+  },
+  "Function declaration": {
+    "prefix": "fd",
+    "body": [
+      "function ${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}$1() {",
+      "};"
+    ]
+  },
+  "Function expression": {
+    "prefix": "fe",
+    "body": ["= function() {", "};"]
+  },
+  "Function (NFE)": {
+    "prefix": "nfe",
+    "body": ["= function $1() {", "};"]
+  },
+  "Function arrow": {
+    "prefix": "af",
+    "body": ["() => {", "};"]
   },
   "Class": {
     "prefix": "edc",
