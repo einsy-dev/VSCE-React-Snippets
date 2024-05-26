@@ -9,7 +9,7 @@
 
   "Function Expression": {
     "prefix": "fe",
-    "body": ["const $1 = function() {", "","};"]
+    "body": ["const $1 = function() {", "", "};"]
   },
 
   "Function Arrow": {
@@ -32,7 +32,7 @@
     "prefix": "clg",
     "body": ["console.log($1);"]
   },
- 
+
   "Public API": {
     "prefix": "ef",
     "body": ["export { $1 } from './$1'"]
@@ -60,6 +60,22 @@
       "};"
     ]
   },
+
+  "React Memo Component": {
+    "prefix": "rmc",
+    "body": [
+      "import { memo } from 'react'",
+      "",
+      "export const ${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}$1 = memo((...props) => {",
+      "\treturn (",
+      "\t\t<>",
+      "\t\t<div className='container'>${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}$1</div>",
+      "\t\t</>",
+      "\t);",
+      "})"
+    ]
+  },
+
   "React Class Component": {
     "prefix": "rcc",
     "body": [
