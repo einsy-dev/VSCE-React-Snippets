@@ -1,42 +1,26 @@
 {
-  "export Function": {
-    "prefix": "edf",
-    "body": [
-      "export default function ${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}$1() {",
-      "};"
-    ]
-  },
-  "Function declaration": {
+  "Function Declaration": {
     "prefix": "fd",
     "body": [
       "function ${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}$1() {",
       "};"
     ]
   },
-  "Function expression": {
+
+  "Function Expression": {
     "prefix": "fe",
-    "body": ["= function() {", "};"]
+    "body": ["const $1 = function() {", "","};"]
   },
-  "Function (NFE)": {
-    "prefix": "nfe",
-    "body": ["= function $1() {", "};"]
-  },
-  "Function arrow": {
-    "prefix": "af",
+
+  "Function Arrow": {
+    "prefix": "fa",
     "body": ["() => {", "};"]
   },
-  "Function arrow export": {
-    "prefix": "eaf",
-    "body": ["export () => {", "};"]
-  },
-  "Function arrow default export": {
-    "prefix": "edaf",
-    "body": ["export default () => {", "};"]
-  },
+
   "Class": {
-    "prefix": "edc",
+    "prefix": "class",
     "body": [
-      "export default class ${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}$1 {",
+      "class ${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}$1 {",
       "\tconstructor(data) {",
       "\tObject.assign(this, data);",
       "\t}",
@@ -47,18 +31,20 @@
     "prefix": "clg",
     "body": ["console.log($1);"]
   },
-
-  "Public API default as": {
-    "prefix": "eda",
-    "body": ["export { default as $1 } from './$1'"]
-  },
-  "Public API default": {
-    "prefix": "ede",
-    "body": ["export { default } from './$1'"]
-  },
+ 
   "Public API": {
-    "prefix": "exp",
+    "prefix": "ef",
     "body": ["export { $1 } from './$1'"]
+  },
+
+  "Export": {
+    "prefix": "export",
+    "body": ["export { $1 }"]
+  },
+
+  "Export Default": {
+    "prefix": "ed",
+    "body": ["export default"]
   },
 
   "React Function Component": {
@@ -110,8 +96,8 @@
   },
 
   "navigation": {
-    "prefix": "const navigation",
-    "body": ["const navigation = useNavigation();"],
+    "prefix": "const navigate",
+    "body": ["const navigate = useNavigation();"],
     "description": "react-router-dom"
   }
 }
