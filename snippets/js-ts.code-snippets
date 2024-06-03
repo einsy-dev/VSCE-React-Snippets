@@ -116,7 +116,7 @@
 
   "navigation": {
     "prefix": "rrn",
-    "body": ["const navigate = useNavigation();"],
+    "body": ["const navigate = useNavigate();"],
     "description": "react-router-dom"
   }
 }
