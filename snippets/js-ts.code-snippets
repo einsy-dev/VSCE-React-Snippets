@@ -54,7 +54,7 @@
       "export default function ${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}$1() {",
       "\treturn (",
       "\t\t<>",
-      "\t\t<div className='container'>${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}$1</div>",
+      "\t\t\t<div className='container'>${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}$1</div>",
       "\t\t</>",
       "\t);",
       "};"
