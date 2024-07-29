@@ -6,6 +6,7 @@
   "engines": {
     "vscode": "^1.89.0"
   },
+  "publisher": "einsy",
   "categories": [
     "Snippets"
   ],
