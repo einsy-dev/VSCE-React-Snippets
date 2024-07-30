@@ -20,9 +20,11 @@
   "Class": {
     "prefix": "class",
     "body": [
+      "import React from 'react';",
+      "",
       "class ${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}$1 {",
       "\tconstructor(data) {",
-      "\tObject.assign(this, data);",
+      "\t\tObject.assign(this, data);",
       "\t}",
       "};"
     ]
@@ -35,19 +37,19 @@
 
   "Public API": {
     "prefix": "ef",
-    "body": ["export { $1 } from './$1'"],
+    "body": ["export { $1 } from './$1';"],
     "description": "export from"
   },
 
   "Export": {
-    "prefix": "export",
-    "body": ["export { $1 }"],
+    "prefix": "e",
+    "body": ["export { $1 };"],
     "description": "export {}"
   },
 
   "Export Default": {
     "prefix": "ed",
-    "body": ["export default"],
+    "body": ["export default $1;"],
     "description": "export default"
   },
 
@@ -57,12 +59,12 @@
       "import { useState } from 'react'",
       "",
       "export default function ${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}$1() {",
-      "const [data, setData] = useState()",
+      "const [data, setData] = useState();",
       "",
       "\treturn (",
       "\t\t<div className={styles.container}>",
-      "${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}$1",
-      "</div>",
+      "\t\t\t${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}$1",
+      "\t\t</div>",
       "\t);",
       "};"
     ],
