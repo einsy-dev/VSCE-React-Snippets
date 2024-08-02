@@ -2,7 +2,7 @@
   "name": "react-simple-snippets",
   "displayName": "react-simple-snippets",
   "description": "",
-  "icon": "./icon.png",
+  "icon": "icons/icon.png",
   "version": "1.0.2",
   "engines": {
     "vscode": "^1.89.0"
@@ -13,6 +13,10 @@
     "url": "https://github.com/einsy-dev/VS-Code"
   },
   "license": "MIT",
+  "scripts": {
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
   "categories": [
     "Snippets"
   ],
@@ -35,5 +39,8 @@
         "path": "./snippets/js-ts.code-snippets"
       }
     ]
+  },
+  "devDependencies": {
+    "vsce": "^2.15.0"
   }
 }
