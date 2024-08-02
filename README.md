@@ -3,14 +3,15 @@
 ### rfc - React function component
 
 ```bash
-import { useState } from 'react'
+import styles from './MyComponent.module.scss';
+import { useState } from 'react';
 
-export default function Index() {
-	const [data, setData] = useState()
+export default function MyComponent() {
+	const [data, setData] = useState();
 
 	return (
 		<div className={styles.container}>
-			Index
+			<div className={styles.content}>MyComponent</div>
 		</div>
 	);
 };
@@ -19,6 +20,7 @@ export default function Index() {
 ### rcc - React Class Component
 
 ```bash
+import styles from './MyComponent.module.scss';
 import React from 'react';
 
 export default class MyComponent extends React.Component {
@@ -27,7 +29,9 @@ export default class MyComponent extends React.Component {
 	};
 	render() {
 		return (
-			<div>MyComponent</div>
+			<div className={styles.container}>
+				<div className={styles.content}>MyComponent</div>
+			</div>
 		);
 	};
 };
@@ -105,7 +109,7 @@ const $1 = function() {
 };
 ```
 
-### class - class
+### cl - class
 
 ```bash
 class MyComponent {

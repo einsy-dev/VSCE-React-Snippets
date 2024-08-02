@@ -18,10 +18,8 @@
   },
 
   "Class": {
-    "prefix": "class",
+    "prefix": "cl",
     "body": [
-      "import React from 'react';",
-      "",
       "class ${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}$1 {",
       "\tconstructor(data) {",
       "\t\tObject.assign(this, data);",
@@ -56,14 +54,15 @@
   "React Function Component": {
     "prefix": "rfc",
     "body": [
-      "import { useState } from 'react'",
+      "import styles from './${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}.module.scss';",
+      "import { useState } from 'react';",
       "",
       "export default function ${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}$1() {",
-      "const [data, setData] = useState();",
+      "\tconst [data, setData] = useState();",
       "",
       "\treturn (",
       "\t\t<div className={styles.container}>",
-      "\t\t\t${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}$1",
+      "\t\t\t<div className={styles.content}>${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}$1</div>",
       "\t\t</div>",
       "\t);",
       "};"
@@ -74,16 +73,21 @@
   "React Class Component": {
     "prefix": "rcc",
     "body": [
+      "import styles from './${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}.module.scss';",
+      "import React from 'react';",
+      "",
       "export default class ${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}$1 extends React.Component {",
       "\tconstructor(props) {",
       "\t\tsuper(props);",
       "\t};",
       "\trender() {",
       "\t\treturn (",
-      "\t\t\t<div>${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}$1</div>",
+      "\t\t\t<div className={styles.container}>",
+      "\t\t\t\t<div className={styles.content}>${TM_FILENAME_BASE/^([^.]+).*/${1:/pascalcase}/}$1</div>",
+      "\t\t\t</div>",
       "\t\t);",
       "\t};",
-      "$2};"
+      "};"
     ],
     "description": "react class component"
   },
