@@ -3,7 +3,7 @@
   "displayName": "react-simple-snippets",
   "description": "",
   "icon": "icons/icon.png",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "engines": {
     "vscode": "^1.89.0"
   },
