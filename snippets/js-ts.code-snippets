@@ -28,9 +28,21 @@
     ]
   },
 
+  "Stop Propagation": {
+    "prefix": "stopPropagation()",
+    "body": ["stopPropagation();"],
+    "description": "Stop Propagation"
+  },
+
+  "Stop Immediate Propagation": {
+    "prefix": "stopImmediatePropagation()",
+    "body": ["stopImmediatePropagation();"],
+    "description": "Stop Immediate Propagation"
+  },
+
   "Prevent Default": {
-    "prefix": "e.preventDefault()",
-    "body": ["e.preventDefault();"],
+    "prefix": "preventDefault()",
+    "body": ["preventDefault();"],
     "description": "prevent default"
   },
 
