@@ -28,15 +28,34 @@
     ]
   },
 
-  "Console Log": {
-    "prefix": "clg",
-    "body": ["console.log($1);"]
+  "Prevent Default": {
+    "prefix": "e.preventDefault()",
+    "body": ["e.preventDefault();"],
+    "description": "prevent default"
   },
 
-  "Public API": {
+  "Console Log": {
+    "prefix": "clg",
+    "body": ["console.log($1);"],
+    "description": "console log"
+  },
+
+  "default": {
+    "prefix": "def",
+    "body": ["default"],
+    "description": "default"
+  },
+
+  "Export From": {
     "prefix": "ef",
-    "body": ["export { $1 } from './$1';"],
+    "body": ["export { $1 } from './$2';"],
     "description": "export from"
+  },
+
+  "Export Default From": {
+    "prefix": "edf",
+    "body": ["export { default as $1 } from './$2';"],
+    "description": "export default from"
   },
 
   "Export": {
