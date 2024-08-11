@@ -11,10 +11,11 @@ export default function MyComponent() {
 
 	return (
 		<div className={styles.container}>
-			<div className={styles.content}>MyComponent</div>
+			<div className={styles.content}>MyComponent$1</div>
 		</div>
 	);
 };
+
 ```
 
 ### rcc - React Class Component
@@ -30,91 +31,103 @@ export default class MyComponent extends React.Component {
 	render() {
 		return (
 			<div className={styles.container}>
-				<div className={styles.content}>MyComponent</div>
+				<div className={styles.content}>MyComponent$1</div>
 			</div>
 		);
 	};
 };
+
 ```
 
 ### ue - useEffect
 
 ```bash
 useEffect(() => {
-
+	$1
 }, []);
+
 ```
 
 ### rs - redux useSelector
 
 ```bash
-const $1 = useSelector((state) => state.$2);
+const $1 = useSelector($2);
+
 ```
 
 ### rd - redux useDispatch
 
 ```bash
 const dispatch = useDispatch();
+
 ```
 
 ### rrn - react router dom useNavigate
 
 ```bash
 const navigate = useNavigate();
+
 ```
 
 ### clg - console log
 
 ```bash
-console.log($1);
+console.log($1)
 ```
 
 ### ef - export from
 
 ```bash
-export { $1 } from './$1'
+export { $1 } from '.$2';
+
 ```
 
-### e - export
+### exp - export
 
 ```bash
-export { $1 }
+export { $1 };
+
 ```
 
 ### ed - export default
 
 ```bash
-export default
+export default $1;
+
 ```
 
 ### fd - function declaration
 
 ```bash
 function MyComponent() {
+	$1
 };
+
 ```
 
 ### fe - function expression
 
 ```bash
-const $1 = function() {
-
+const MyComponent = function() {
+	$1
 };
+
 ```
 
 ### af - arrow function
 
 ```bash
-() => {
-};
+($1) => { $2 }
 ```
 
-### cl - class
+### cla - class
 
 ```bash
 class MyComponent {
 	constructor(data) {
 	Object.assign(this, data);
 	}
+	$1
 };
+
 ```
